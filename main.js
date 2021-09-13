@@ -114,14 +114,21 @@ const icons = [
  * Ritorna un colore per ogni categoria
  */
 function setColor(categ){
-    if(categ == "beverage"){
-        return "#EB4414"; //RED
-    } else if(categ == "food"){
-        return "#F0C105"; //YELLOW
-    } else if(categ == "animal"){
-        return "#04C477"; //GREEN
+    switch(categ){
+        case 'beverage':
+            return "#EB4414"; //red
+        
+        case 'food':
+            return "#F0C105"; //yellow
+
+        case 'animal':
+            return "#04C477"; //green
+        
+        default:
+            return "black"
     }
 }
+
 
 // inserisco nell'HTML tutte le icone
   icons.forEach(
