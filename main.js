@@ -156,12 +156,9 @@ printIcons(icons, "iconsContainer");
 
 // Compilo la select dell'HTML con tutte le categorie dell'array
 const inSelect = [];
+const getSelect = document.getElementById('filtraPer');
 icons.forEach(
     (elm) => {
-        let getSelect = document.getElementById('filtraPer');
-
-        // getSelect.innerHTML += `<option value="${elm.category}">${elm.category}</option>`
-
         if (inSelect.includes(elm.category) == false){
             inSelect.push(elm.category)
             getSelect.innerHTML += `<option value="${elm.category}">${elm.category}</option>`
@@ -170,3 +167,18 @@ icons.forEach(
 );
 
 // Alla modifica del select filtro le icone nella pagina
+getSelect.addEventListener("change",
+function(){
+
+    const filtered = icons.filter(
+        (elm) => {
+            if (getSelect.value == "all" || getSelect.value == elm.category){
+                return true
+            }
+            return false
+        }
+    );
+
+    printIcons(filtered, "iconsContainer");
+}
+);

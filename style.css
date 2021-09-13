@@ -57,7 +57,6 @@ main{
 }
 
 .container-wrap{
-    height: 100%;
     width: 100%;
     padding: 30px 50px;
 
@@ -74,7 +73,7 @@ main{
     background-color: white;
     box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.5);
     border-radius: 30px;
-    margin: 0 10px;
+    margin: 10px;
 
     display: flex;
     flex-direction: column;
