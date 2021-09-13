@@ -110,23 +110,22 @@ const icons = [
   ];
 
 
-function randomColor(){
-    let num = Math.floor(Math.random() * 3);
-    if(num == 0){
+function setColor(categ){
+    if(categ == "beverage"){
         return "#EB4414"; //RED
-    } else if(num == 1){
+    } else if(categ == "food"){
         return "#F0C105"; //YELLOW
-    } else if(num == 2){
+    } else if(categ == "animal"){
         return "#00D15E"; //GREEN
     }
 }
 
 // inserisco nell'HTML tutte le icone
   icons.forEach(
-      (elm, i) => {
+      (elm) => {
           document.getElementById('here').innerHTML += `
         <div class="icon-box">
-            <i class="${elm.family} ${elm.prefix}${elm.name}" style="color:${randomColor()}"></i>
+            <i class="${elm.family} ${elm.prefix}${elm.name}" style="color:${setColor(elm.category)}"></i>
             <p>${elm.name}</p>
         </div>`
       }
