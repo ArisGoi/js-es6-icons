@@ -5,7 +5,13 @@
     box-sizing: border-box;
 }
 
+:root{
+    --First: rgb(41, 177, 221);
+
+    --logoFamily: 'Acme', sans-serif;
+    --standardFamily: 'Rubik', sans-serif;
+}
+
 body{
-    /* font-family: 'Acme', sans-serif; */
-    font-family: 'Rubik', sans-serif;
+    font-family: var(--logoFamily);
 }
