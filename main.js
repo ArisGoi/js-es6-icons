@@ -130,13 +130,43 @@ function setColor(categ){
 }
 
 
-// inserisco nell'HTML tutte le icone
-  icons.forEach(
-      (elm) => {
-          document.getElementById('here').innerHTML += `
-        <div class="icon-box">
-            <i class="${elm.family} ${elm.prefix}${elm.name}" style="color:${setColor(elm.category)}"></i>
-            <p>${elm.name}</p>
-        </div>`
-      }
-  );
+/**
+ * FUNZIONE
+ * inserisce nell'HTML i box delle icone
+ * specificare array di partenza e container in cui inserire
+ */
+function printIcons(arr, containerId){
+    let getContainer = document.getElementById(containerId);
+
+    getContainer.innerHTML = "";
+
+    arr.forEach(
+        (elm) => {
+        getContainer.innerHTML += `
+          <div class="icon-box">
+              <i class="${elm.family} ${elm.prefix}${elm.name}" style="color:${setColor(elm.category)}"></i>
+              <p>${elm.name}</p>
+          </div>`
+        }
+    );
+};
+
+// genero tutte le icone
+printIcons(icons, "iconsContainer");
+
+// Compilo la select dell'HTML con tutte le categorie dell'array
+const inSelect = [];
+icons.forEach(
+    (elm) => {
+        let getSelect = document.getElementById('filtraPer');
+
+        // getSelect.innerHTML += `<option value="${elm.category}">${elm.category}</option>`
+
+        if (inSelect.includes(elm.category) == false){
+            inSelect.push(elm.category)
+            getSelect.innerHTML += `<option value="${elm.category}">${elm.category}</option>`
+        }
+    }
+);
+
+// Alla modifica del select filtro le icone nella pagina
