@@ -24,7 +24,9 @@ h1{
 .logobar{
     height: 60px;
     color: var(--first);
-    padding-top: 25px;
+    padding-top: 5px;
+    padding-left: 20px;
+    font-size: 25px;
 }
 
 
@@ -68,11 +70,11 @@ main{
 .icon-box{
     padding: 30px;
     height: 160px;
-    width: calc(20% - 10px);
+    width: calc(20% - 20px);
     background-color: white;
     box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.5);
     border-radius: 30px;
-    margin: 0 5px;
+    margin: 0 10px;
 
     display: flex;
     flex-direction: column;
