@@ -109,14 +109,17 @@ const icons = [
 	},
   ];
 
-
+/**
+ * FUNZIONE
+ * Ritorna un colore per ogni categoria
+ */
 function setColor(categ){
     if(categ == "beverage"){
         return "#EB4414"; //RED
     } else if(categ == "food"){
         return "#F0C105"; //YELLOW
     } else if(categ == "animal"){
-        return "#00D15E"; //GREEN
+        return "#04C477"; //GREEN
     }
 }
 
